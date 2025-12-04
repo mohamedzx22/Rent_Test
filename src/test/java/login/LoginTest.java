@@ -35,7 +35,7 @@ public class LoginTest extends BaseTest {
     public Object[][] emptyLoginData() {
         return new Object[][]{
                 {"", "1234", "Email is required"},              // Email فاضي
-                //{"rahma@gmail.com", "", "Password is required"}, // Password فاضي
+                {"rahma@gmail.com", "", "Password is required"}, // Password فاضي
                 {"", "", "Email and Password are required"}     // الاتنين فاضيين
         };
     }

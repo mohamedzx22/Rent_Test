@@ -47,13 +47,13 @@ public class BaseTest {
     public void loginAsAdmin() {
         LoginPage login = new LoginPage(this.driver);
         login.openLoginPage();
-        login.login("rahma@example.com", "1234");
+        login.login("rahma@gmail.com", "1234");
     }
 
     public void loginAsLandlord() {
         LoginPage login = new LoginPage(this.driver);
         login.openLoginPage();
-        login.login("hoor@example.com", "1234");
+        login.login("hoor@gmail.com", "1234");
     }
 
     public void loginAsTenant() {
@@ -72,6 +72,12 @@ public class BaseTest {
         js.executeScript("window.localStorage.setItem('userToken', arguments[0]);", userToken);
     }
 
-
+    public void login(String email, String password) {
+        LoginPage login = new LoginPage(this.driver);
+        login.openLoginPage();
+        WebDriverWait wait = new WebDriverWait(this.driver, Duration.ofSeconds(10L));
+        wait.until(ExpectedConditions.urlToBe("http://localhost:3000/login"));
+        login.login(email, password);
+    }
 
 }

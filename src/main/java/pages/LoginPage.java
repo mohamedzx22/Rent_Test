@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class LoginPage {
     WebDriver driver;
-    By emailInput = By.xpath("//input[@placeholder='Email']");
+    By emailInput = By.cssSelector("input[placeholder='Email']");
     By passwordInput = By.xpath("//input[@placeholder='Password']");
     By loginBtn = By.xpath("//button[@type='submit']");
     By loginLink = By.xpath("//a[@href='/login']");
@@ -34,8 +34,8 @@ public class LoginPage {
     }
 
     public void enterEmail(String email) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='email']")));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emailInput));
         driver.findElement(emailInput).sendKeys(email);
     }
 

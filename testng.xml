@@ -1,0 +1,37 @@
+<suite name="RentTestSuite">
+    <test name="LoginTests">
+        <classes>
+            <class name="login.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="RegisterTests">
+        <classes>
+            <class name="register.RegisterTest"/>
+        </classes>
+    </test>
+
+    <test name="PropertyTests">
+        <classes>
+            <class name="property.PropertyTest"/>
+        </classes>
+    </test>
+
+    <test name="PendingLandlordsTests">
+        <classes>
+            <class name="pendinglandlords.PendingLandlordsTest"/>
+        </classes>
+    </test>
+
+    <test name="PendingPropertiesTests">
+        <classes>
+            <class name="pendingproperties.PendingPropertiesTest"/>
+        </classes>
+    </test>
+
+    <test name="ApplicationTests">
+        <classes>
+            <class name="application.ApplicationTest"/>
+        </classes>
+    </test>
+</suite>

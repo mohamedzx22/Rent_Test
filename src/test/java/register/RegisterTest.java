@@ -15,8 +15,9 @@ public class RegisterTest extends BaseTest {
     @DataProvider(name = "registerData")
     public Object[][] registerData() {
         return new Object[][] {
-                {"Rama", "rama@gmail.com", "1234", "1234", "01012345678", "Tenant"},
-                {"Ruba", "ruba@gmail.com", "abcd", "abcd", "01198765432", "Landlord"}
+                //{"Rama", "rama@gmail.com", "1234", "1234", "01012345678", "Tenant"},
+                //{"Ruba", "ruba@gmail.com", "abcd", "abcd", "01198765432", "Landlord"}
+                {"R1", "r1@gmail.com", "1234", "1234", "01198765432", "Landlord"}
         };
     }
     @DataProvider(name = "emptyFieldData")

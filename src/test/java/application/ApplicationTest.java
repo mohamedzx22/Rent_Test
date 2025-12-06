@@ -18,7 +18,9 @@ public class ApplicationTest extends BaseTest {
     @DataProvider(name = "SuccessApplication")
     public Object[][] SuccessApplication() {
         return new Object[][]{
-                {"Rahma Shawkat", "01234567890", "C://Users//DELL//Downloads//Walid.pdf", true}
+                {"Rahma Shawkat", "01234567890", "C://Users//DELL//Downloads//Walid.pdf", true},
+                {"Reem Yasser", "01234756890", "C://Users//DELL//Downloads//Walid.pdf", true},
+                {"Fares Ahmed", "01134567580", "C://Users//DELL//Downloads//Osama.pdf", true}
         };
     }
 

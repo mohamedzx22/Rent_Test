@@ -60,10 +60,8 @@ public class BaseTest {
         driver.get("http://localhost:3000/login");
         loginPage.login("rana@gmail.com", "1234");
 
-        // ✅ استخدام الـ wait من BaseTest
         wait.until(ExpectedConditions.urlContains("/tenant"));
 
-        // جلب وحفظ التوكن في localStorage
         JavascriptExecutor js = (JavascriptExecutor) driver;
         String userToken = (String) js.executeScript("return window.localStorage.getItem('userToken');");
         System.out.println("Token: " + userToken);

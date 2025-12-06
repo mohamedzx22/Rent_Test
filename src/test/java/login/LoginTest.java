@@ -21,7 +21,9 @@ public class LoginTest extends BaseTest {
             name = "validLoginData"
     )
     public Object[][] validLoginData() {
-        return new Object[][]{{"rahma@gmail.com", "1234", "/admin"}, {"hoor@gmail.com", "1234", "/landlord"}, {"rana@gmail.com", "1234", "/tenant"}};
+        return new Object[][]{{"rahma@gmail.com", "1234", "/admin"},
+                {"hoor@gmail.com", "1234", "/landlord"},
+                {"rana@gmail.com", "1234", "/tenant"}};
     }
 
     @DataProvider(
@@ -64,7 +66,7 @@ public class LoginTest extends BaseTest {
         };
     }
 
-    @Test(
+    @Test(priority = 1,
             dataProvider = "validLoginData"
     )
     public void testValidLogin(String email, String password, String expectedPath) {
@@ -83,7 +85,7 @@ public class LoginTest extends BaseTest {
         wait.until(ExpectedConditions.urlToBe("http://localhost:3000/"));
     }
 
-    @Test(
+    @Test(priority = 2,
             dataProvider = "InvalidLoginData"
     )
     public void testInValidLogin(String email, String password, String expectedAlertMessage) {
@@ -107,7 +109,7 @@ public class LoginTest extends BaseTest {
         }
 
     }
-    @Test(dataProvider = "emptyLoginData")
+    @Test(priority = 5,dataProvider = "emptyLoginData")
     public void emptyFieldsLogin(String email, String password, String expectedAlert) {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.openLoginPage();
@@ -135,7 +137,7 @@ public class LoginTest extends BaseTest {
         }
     }
 
-    @Test(dataProvider = "emailWithoutAtData")
+    @Test(priority = 3,dataProvider = "emailWithoutAtData")
     public void withoutAtYahoo(String email, String password, String expectedAlert) {
 
         loginPage.openLoginPage();
@@ -161,7 +163,7 @@ public class LoginTest extends BaseTest {
     }
 
 
-    @Test(dataProvider = "capitalEmailData")
+    @Test(priority = 4,dataProvider = "capitalEmailData")
     public void EmailWithCapitalLetter(String email, String password) {
 
         loginPage.openLoginPage();

@@ -55,7 +55,7 @@ public class PropertyTest extends BaseTest {
         return new Object[][]{{"Nice Apartment", false},
                 {"Cairo Fella", true},
                 {"C1",  true},
-               // {"mahdi top top", true}
+               {"mahdi top top", false}
                 };
     }
 

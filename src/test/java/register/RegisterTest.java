@@ -15,8 +15,8 @@ public class RegisterTest extends BaseTest {
     @DataProvider(name = "registerData")
     public Object[][] registerData() {
         return new Object[][] {
-                //{"Rama", "rama@gmail.com", "1234", "1234", "01012345678", "Tenant"},
-                //{"Ruba", "ruba@gmail.com", "abcd", "abcd", "01198765432", "Landlord"}
+                {"Rama", "rama1@gmail.com", "1234", "1234", "01012345678", "Tenant"},
+                {"Ruba", "ruba1@gmail.com", "abcd", "abcd", "01198765432", "Landlord"},
                 {"R1", "r1@gmail.com", "1234", "1234", "01198765432", "Landlord"}
         };
     }
@@ -35,64 +35,68 @@ public class RegisterTest extends BaseTest {
     public Object[][] shortPasswordData() {
         return new Object[][] {
                 {"Nada", "nada@gmail.com", "123", "123", "01012345678", "Tenant", "Password must be at least 7 characters"},
-                //{"Omar", "omar@gmail.com", "abc", "abc", "01122233344", "Landlord", "Password must be at least 7 characters"}
+                {"Omar", "omar@gmail.com", "abc", "abc", "01122233344", "Landlord", "Password must be at least 7 characters"}
         };
     }
     @DataProvider(name = "longPasswordData")
     public Object[][] longPasswordData() {
         return new Object[][] {
-                {"Nada", "nada@gmail.com",
+                {"Nirvana", "nirvana@gmail.com",
                         "12345678901234567890123456789", "12345678901234567890123456789",
                         "01011122233", "Tenant", "Password must be less than 25 characters"},
 
-                /*{"Ali", "ali@gmail.com",
+                {"Ali", "ali@gmail.com",
                         "abcdefghijklmnopqrstuvwxyz123456", "abcdefghijklmnopqrstuvwxyz123456",
-                        "01144455566", "Landlord", "Password must be less than 25 characters"}*/
+                        "01144455566", "Landlord", "Password must be less than 25 characters"}
         };
     }
     @DataProvider(name = "mismatchPasswordData")
     public Object[][] mismatchPasswordData() {
         return new Object[][] {
                 {"Nada", "nada@gmail.com", "1234567", "12345678", "01012345678", "Tenant", "Passwords do not match."},
-                //{"Ali", "ali@gmail.com", "abcdefg", "abcdafg", "01111111111", "Landlord", "Passwords do not match."}
+                {"Ali", "ali@gmail.com", "abcdefg", "abcdafg", "01111111111", "Landlord", "Passwords do not match."}
         };
     }
     @DataProvider(name = "invalidUsernameChar")
     public Object[][] invalidUsernameData() {
         return new Object[][] {
                 {"Nadia!", "Nadia@gmail.com", "1234567", "1234567", "01012345678", "Tenant", "Username must not contain special characters"},
-                //{"Ali@", "ali@gmail.com", "abcdefg", "abcdefg", "01111111111", "Landlord", "Username must not contain special characters"},
+                {"Assem@", "assem@gmail.com", "abcdefg", "abcdefg", "01111111111", "Landlord", "Username must not contain special characters"}
         };
     }
     @DataProvider(name = "existingEmailData")
     public Object[][] existingEmailData() {
         return new Object[][] {
                 {"Rahma", "rahma@gmail.com", "1234", "1234", "01011122233", "Tenant", "Email already exists"},
-                //{"Reem", "reem@gmail.com", "1234", "1234", "01144455566", "Landlord", "Email already exists"}
+                {"Reem", "reem@gmail.com", "1234", "1234", "01144455566", "Landlord", "Email already exists"}
         };
     }
     @DataProvider(name = "phoneShortData")
     public Object[][] phoneShortData() {
         return new Object[][] {
-                {"Ruba", "ruba@gmail.com", "1234567", "1234567", "0101234567", "Tenant", "Phone number must be exactly 11 digits long."},
+                {"Zen", "zenab@gmail.com", "1234567", "1234567", "0101234567", "Tenant", "Phone number must be exactly 11 digits long."},
+                {"Ram", "ram@gmail.com", "1234567", "1234567", "0101234567", "Tenant", "Phone number must be exactly 11 digits long."},
         };
     }
     @DataProvider(name = "phoneLongData")
     public Object[][] phoneLongData() {
         return new Object[][] {
-                {"Ranaa", "ranaa@gmail.com", "abcdefg", "abcdefg", "010123456789", "Landlord", "Phone number must be exactly 11 digits long."}
+                {"Mos", "Mosa@gmail.com", "abcdefg", "abcdefg", "010123456789", "Landlord", "Phone number must be exactly 11 digits long."},
+                {"Mona", "mona@gmail.com", "abcdefg", "abcdefg", "010123456789", "Tenant", "Phone number must be exactly 11 digits long."}
         };
     }
     @DataProvider(name = "allZeroPhoneData")
     public Object[][] allZeroPhoneData() {
         return new Object[][] {
-                {"Rema", "rema@gmail.com", "1234567", "1234567", "00000000000", "Tenant", "Phone number cannot be all zeros."}
+                {"Rema", "rema@gmail.com", "1234567", "1234567", "00000000000", "Tenant", "Phone number cannot be all zeros."},
+                {"Ramy", "ramy@gmail.com", "1234567", "1234567", "00000000000", "Landlord", "Phone number cannot be all zeros."}
         };
     }
     @DataProvider(name = "existingPhoneData")
     public Object[][] existingPhoneData() {
         return new Object[][] {
                 {"Remas", "remas@gmail.com", "1234567", "1234567", "01229874536", "Tenant", "Phone number already exists"},
+                {"Raheq", "raheq@gmail.com", "1234567", "1234567", "01229874536", "Landlord", "Phone number already exists"},
         };
     }
 

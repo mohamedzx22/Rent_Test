@@ -1,19 +1,13 @@
 <suite name="RentTestSuite">
-    <test name="LoginTests">
-        <classes>
-            <class name="login.LoginTest"/>
-        </classes>
-    </test>
-
     <test name="RegisterTests">
         <classes>
             <class name="register.RegisterTest"/>
         </classes>
     </test>
 
-    <test name="PropertyTests">
+    <test name="LoginTests">
         <classes>
-            <class name="property.PropertyTest"/>
+            <class name="login.LoginTest"/>
         </classes>
     </test>
 
@@ -26,6 +20,12 @@
     <test name="PendingPropertiesTests">
         <classes>
             <class name="pendingproperties.PendingPropertiesTest"/>
+        </classes>
+    </test>
+
+    <test name="PropertyTests">
+        <classes>
+            <class name="property.PropertyTest"/>
         </classes>
     </test>
 
